@@ -5,8 +5,9 @@
         NONE,
         MENU,
         NEW_GAME,
-        RUNNING,
-        ENDED,
+        SETUP,
+        RUN,
+        END,
         EXIT
     };
 }

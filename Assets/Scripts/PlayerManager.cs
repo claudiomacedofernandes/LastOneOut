@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace LastOneOut
 {
@@ -11,14 +12,16 @@ namespace LastOneOut
         private void OnEnable()
         {
             GameManager.instance.onGameStateChange += OnGameStateChangeHandler;
+            GameManager.instance.onGameTurnChange += OnGameTurnChangeHandler;
         }
 
         private void OnDisable()
         {
             GameManager.instance.onGameStateChange -= OnGameStateChangeHandler;
+            GameManager.instance.onGameTurnChange -= OnGameTurnChangeHandler;
         }
 
-        public void OnGameStateChangeHandler(GameState newGameState, GameInfo gameInfo = null)
+        public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
         {
             switch (newGameState)
             {
@@ -27,15 +30,22 @@ namespace LastOneOut
                 case GameState.MENU:
                     break;
                 case GameState.NEW_GAME:
-                    Init(gameInfo);
+                    Init((GameInfo) stateInfo);
                     break;
-                case GameState.RUNNING:
+                case GameState.SETUP:
                     break;
-                case GameState.ENDED:
+                case GameState.RUN:
+                    break;
+                case GameState.END:
                     break;
                 case GameState.EXIT:
                     break;
             }
+        }
+
+        private void OnGameTurnChangeHandler(PlayerIndex playerIndex)
+        {
+
         }
 
         public void Init(GameInfo gameInfo)

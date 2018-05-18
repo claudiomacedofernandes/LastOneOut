@@ -5,22 +5,21 @@ namespace LastOneOut
     public class UIManager : MonoBehaviour
     {
         public GameObject homeCanvas = null;
+        public GameObject setupCanvas = null;
         public GameObject gameCanvas = null;
+        public GameObject endCanvas = null;
         public GameObject menuCanvas = null;
 
         private void OnEnable()
         {
             GameManager.instance.onGameStateChange += OnGameStateChangeHandler;
+            GameManager.instance.onGameTurnChange += OnGameTurnChangeHandler;
         }
 
         private void OnDisable()
         {
             GameManager.instance.onGameStateChange -= OnGameStateChangeHandler;
-        }
-
-        public void StartNewGame(GameInfo gameInfo)
-        {
-            GameManager.instance.SetGameState(GameState.NEW_GAME, gameInfo);
+            GameManager.instance.onGameTurnChange -= OnGameTurnChangeHandler;
         }
 
         public void SetGameMenu(bool isActive)
@@ -28,11 +27,34 @@ namespace LastOneOut
             menuCanvas.SetActive(isActive);
         }
 
-        public void OnGameStateChangeHandler(GameState newGameState, GameInfo gameInfo = null)
+        public void SetNewGame(GameInfo gameInfo)
+        {
+            GameManager.instance.SetGameState(GameState.NEW_GAME, gameInfo);
+        }
+
+        public void StartNewGame(PlayerIndex playerIndex)
+        {
+            GameManager.instance.SetGameState(GameState.RUN);
+            GameManager.instance.SetNewTurn(playerIndex);
+        }
+
+        public void EndPlayerRun()
+        {
+            GameManager.instance.SetNewTurn();
+        }
+
+        public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
         {
             SetGameMenu(false);
             homeCanvas.SetActive(newGameState == GameState.MENU);
-            gameCanvas.SetActive(newGameState == GameState.RUNNING);
+            setupCanvas.SetActive(newGameState == GameState.SETUP);
+            gameCanvas.SetActive(newGameState == GameState.RUN);
+            endCanvas.SetActive(newGameState == GameState.END);
+        }
+
+        private void OnGameTurnChangeHandler(PlayerIndex playerIndex)
+        {
+
         }
 
         public void OnButtonExit()
@@ -57,17 +79,32 @@ namespace LastOneOut
 
         public void OnButtonHumanVSHuman()
         {
-            StartNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.HUMAN));
+            SetNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.HUMAN));
         }
 
         public void OnButtonHumanVSNimatron()
         {
-            StartNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.NIMATRON));
+            SetNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.NIMATRON));
         }
 
         public void OnButtonNimatronVSNimatron()
         {
-            StartNewGame(new GameInfo(PlayerType.NIMATRON, PlayerType.NIMATRON));
+            SetNewGame(new GameInfo(PlayerType.NIMATRON, PlayerType.NIMATRON));
+        }
+
+        public void OnButtonPlayerOneStarts()
+        {
+            StartNewGame(PlayerIndex.PLAYER_ONE);
+        }
+
+        public void OnButtonPlayerTwoStarts()
+        {
+            StartNewGame(PlayerIndex.PLAYER_TWO);
+        }
+
+        public void OnButtonEndTurn()
+        {
+            EndPlayerRun();
         }
     }
 }

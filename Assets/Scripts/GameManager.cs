@@ -5,9 +5,11 @@ namespace LastOneOut
     public class GameManager : MonoBehaviour
     {
         [HideInInspector] public static GameManager instance = null;
-        [HideInInspector] public System.Action<GameState, GameInfo> onGameStateChange = null;
+        [HideInInspector] public System.Action<GameState, object> onGameStateChange = null;
+        [HideInInspector] public System.Action<PlayerIndex> onGameTurnChange = null;
         public GameState prevGameState = GameState.NONE;
         public GameState gameState = GameState.NONE;
+        public PlayerIndex currentPlayer = PlayerIndex.NONE;
         private bool boardManagerReady = false;
         private bool playerManagerReady = false;
 
@@ -29,19 +31,34 @@ namespace LastOneOut
             Application.Quit();
         }
 
-        public void SetGameState(GameState newGameState, GameInfo gameInfo = null)
+        public void SetNewTurn(PlayerIndex playerIndex = PlayerIndex.NONE)
+        {
+            if (playerIndex == PlayerIndex.NONE)
+                currentPlayer = currentPlayer == PlayerIndex.PLAYER_ONE ? PlayerIndex.PLAYER_TWO : PlayerIndex.PLAYER_ONE;
+            else
+                currentPlayer = playerIndex;
+            
+            if (onGameTurnChange != null)
+                onGameTurnChange(currentPlayer);
+
+            Debug.Log("SetNewTurn: " + currentPlayer);
+        }
+
+        public void SetGameState(GameState newGameState, object stateInfo = null)
         {
             if (newGameState == GameState.NEW_GAME)
                 ResetGameReadyState();
 
             if (onGameStateChange != null)
-                onGameStateChange(newGameState, gameInfo);
+                onGameStateChange(newGameState, stateInfo);
 
             prevGameState = gameState;
             gameState = newGameState;
 
             if (newGameState == GameState.NEW_GAME)
                 CheckGameReadyState();
+
+            Debug.Log("SetGameState: " + gameState);
         }
 
         public void SetBoardManagerReady(bool newState)
@@ -73,7 +90,7 @@ namespace LastOneOut
             if (playerManagerReady == false)
                 return;
 
-            SetGameState(GameState.RUNNING);
+            SetGameState(GameState.SETUP);
         }
 
     }
