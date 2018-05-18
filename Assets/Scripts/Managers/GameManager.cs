@@ -7,6 +7,7 @@ namespace LastOneOut
         [HideInInspector] public static GameManager instance = null;
         [HideInInspector] public System.Action<GameState, object> onGameStateChange = null;
         [HideInInspector] public System.Action<PlayerIndex> onGameTurnChange = null;
+        [HideInInspector] public System.Action<BoardItem> onGameItemSelected = null;
         public GameState prevGameState = GameState.NONE;
         public GameState gameState = GameState.NONE;
         public PlayerIndex currentPlayer = PlayerIndex.NONE;
@@ -40,8 +41,6 @@ namespace LastOneOut
             
             if (onGameTurnChange != null)
                 onGameTurnChange(currentPlayer);
-
-            Debug.Log("SetNewTurn: " + currentPlayer);
         }
 
         public void SetGameState(GameState newGameState, object stateInfo = null)
@@ -91,6 +90,14 @@ namespace LastOneOut
                 return;
 
             SetGameState(GameState.SETUP);
+        }
+
+        public void SelectBoardItem(BoardItem selectedItem)
+        {
+            if (onGameItemSelected != null)
+            {
+                onGameItemSelected(selectedItem);
+            }
         }
 
     }

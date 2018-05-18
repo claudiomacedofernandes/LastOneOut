@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace LastOneOut
@@ -17,11 +18,13 @@ namespace LastOneOut
         private void OnEnable()
         {
             GameManager.instance.onGameStateChange += OnGameStateChangeHandler;
+            GameManager.instance.onGameItemSelected += onGameItemSelectedHandler;
         }
 
         private void OnDisable()
         {
             GameManager.instance.onGameStateChange -= OnGameStateChangeHandler;
+            GameManager.instance.onGameItemSelected -= onGameItemSelectedHandler;
         }
 
         public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
@@ -60,11 +63,14 @@ namespace LastOneOut
             }
         }
 
-        public void Init()
+        private void onGameItemSelectedHandler(BoardItem item)
         {
-            DestroyBoard();
-            InitBoard(boardPlaces);
-            GameManager.instance.SetBoardManagerReady(true);
+            DestroyItem(item);
+        }
+
+        public void DestroyItem(BoardItem item)
+        {
+            Destroy(item.gameObject);
         }
 
         public void DestroyBoard()
@@ -74,6 +80,13 @@ namespace LastOneOut
             {
                 Destroy(item.gameObject);
             }
+        }
+
+        public void Init()
+        {
+            DestroyBoard();
+            InitBoard(boardPlaces);
+            GameManager.instance.SetBoardManagerReady(true);
         }
 
         public void InitBoard(List<Vector3> places)
