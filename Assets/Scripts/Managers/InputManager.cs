@@ -11,6 +11,8 @@ namespace LastOneOut
 
         public System.Action<BoardItem> onItemSelected = null;
         private bool trackInput = false;
+        private float lastClick = 0f;
+        private readonly float waitInterval = 0.1f;
 
         void Awake()
         {
@@ -23,6 +25,10 @@ namespace LastOneOut
         private void Update()
         {
             if (trackInput == false)
+                return;
+
+            lastClick -= Time.deltaTime;
+            if (lastClick > 0)
                 return;
 
             if (Input.GetMouseButtonDown(0))
@@ -42,16 +48,20 @@ namespace LastOneOut
                 BoardItem item = hit.collider.gameObject.GetComponentInParent<BoardItem>();
                 if (item != null)
                     onItemSelected(item);
+
+                lastClick = waitInterval;
             }
         }
 
         public void StartInputTracking()
         {
+            lastClick = waitInterval;
             trackInput = true;
         }
 
         public void StopInputTracking()
         {
+            lastClick = waitInterval;
             trackInput = false;
         }
     }

@@ -22,20 +22,13 @@ namespace LastOneOut
             switch (GameManager.instance.gameState)
             {
                 case GameState.NONE:
-                    break;
                 case GameState.MENU:
-                    break;
-                case GameState.NEW_GAME:
-                    OnGameStart((GameInfo)stateInfo);
-                    break;
-                case GameState.SETUP:
-                    break;
-                case GameState.RUN:
-                    break;
+                case GameState.EXIT:
                 case GameState.END:
                     OnGameEnd();
                     break;
-                case GameState.EXIT:
+                case GameState.NEW_GAME:
+                    OnGameStart((GameInfo)stateInfo);
                     break;
             }
         }
@@ -49,6 +42,9 @@ namespace LastOneOut
 
         public void OnGameEnd()
         {
+            if (GameManager.instance.currentGameData == null)
+                return;
+            
             if (GameManager.instance.currentGameData.currentPlayer != null)
             {
                 GameManager.instance.currentGameData.currentPlayer.EndTurn();

@@ -34,7 +34,8 @@ namespace LastOneOut
                 case GameState.NONE:
                 case GameState.MENU:
                 case GameState.EXIT:
-                    HideBoard();
+                case GameState.END:
+                    OnGameEnd();
                     break;
                 case GameState.NEW_GAME:
                     OnGameStart();
@@ -42,23 +43,22 @@ namespace LastOneOut
                 case GameState.SETUP:
                     ShowBoard();
                     break;
-                case GameState.RUN:
-                    break;
-                case GameState.END:
-                    OnGameEnd();
-                    break;
             }
         }
 
         public void OnGameStart()
         {
-            DestroyBoard();
             InitBoard(initialBoardPlaces);
             GameManager.instance.SetBoardManagerReady(true);
         }
 
         public void OnGameEnd()
         {
+            if (GameManager.instance.currentGameData == null)
+                return;
+
+            DestroyBoard();
+            HideBoard();
         }
 
         private void OnGameItemSelectedHandler(BoardItem item)

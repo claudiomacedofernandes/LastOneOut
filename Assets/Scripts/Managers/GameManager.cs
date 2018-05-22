@@ -31,6 +31,14 @@ namespace LastOneOut
             SetGameState(GameState.MENU);
         }
 
+        public void Update()
+        {
+            if (gameState == GameState.NEW_GAME && CheckGameReadyState() == true)
+                SetGameState(GameState.SETUP);
+            else if (gameState == GameState.END)
+                ResetGameReadyState();
+        }
+
         void Quit()
         {
             Application.Quit();
@@ -60,28 +68,18 @@ namespace LastOneOut
             prevGameState = gameState;
             gameState = newGameState;
 
-            if (gameState == GameState.END)
-                ResetGameReadyState();
-
-            if (CheckGameReadyState() == true)
-                gameState = GameState.SETUP;
-
             if (onGameStateChange != null)
-                onGameStateChange(stateInfo); 
+                onGameStateChange(stateInfo);
         }
 
         public void SetBoardManagerReady(bool newState)
         {
             boardManagerReady = newState;
-            if (CheckGameReadyState() == true)
-                SetGameState(GameState.SETUP);
         }
 
         public void SetPlayerManagerReady(bool newState)
         {
             playerManagerReady = newState;
-            if (CheckGameReadyState() == true)
-                SetGameState(GameState.SETUP);
         }
 
         public void ResetGameReadyState()
