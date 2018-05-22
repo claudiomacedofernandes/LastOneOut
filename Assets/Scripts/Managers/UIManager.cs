@@ -29,18 +29,18 @@ namespace LastOneOut
 
         public void SetNewGame(GameInfo gameInfo)
         {
-            GameManager.instance.SetGameState(GameState.NEW_GAME, gameInfo);
+            GameManager.instance.StartNewGame(gameInfo);
         }
 
         public void StartNewGame(PlayerIndex playerIndex)
         {
             GameManager.instance.SetGameState(GameState.RUN);
-            GameManager.instance.SetNewTurn(playerIndex);
+            GameManager.instance.StartTurn(playerIndex);
         }
 
         public void EndPlayerRun()
         {
-            GameManager.instance.SetNewTurn();
+            GameManager.instance.StartTurn();
         }
 
         public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
@@ -52,7 +52,7 @@ namespace LastOneOut
             endCanvas.SetActive(newGameState == GameState.END);
         }
 
-        private void OnGameTurnChangeHandler(PlayerIndex playerIndex)
+        private void OnGameTurnChangeHandler()
         {
 
         }

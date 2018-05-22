@@ -8,7 +8,7 @@ namespace LastOneOut
     {
         public GameObject board = null;
         public GameObject boardItemPrefab = null;
-        private List<Vector3> boardPlaces = null;
+        private List<Vector3> initialBoardPlaces = null;
 
         private void Start()
         {
@@ -18,13 +18,13 @@ namespace LastOneOut
         private void OnEnable()
         {
             GameManager.instance.onGameStateChange += OnGameStateChangeHandler;
-            GameManager.instance.onGameItemSelected += onGameItemSelectedHandler;
+            GameManager.instance.onGameItemSelected += OnGameItemSelectedHandler;
         }
 
         private void OnDisable()
         {
             GameManager.instance.onGameStateChange -= OnGameStateChangeHandler;
-            GameManager.instance.onGameItemSelected -= onGameItemSelectedHandler;
+            GameManager.instance.onGameItemSelected -= OnGameItemSelectedHandler;
         }
 
         public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
@@ -49,43 +49,39 @@ namespace LastOneOut
             }
         }
 
+        private void OnGameItemSelectedHandler(BoardItem item)
+        {
+            DestroyItem(item);
+        }
+
+        public void ShowBoard()
+        {
+            board.SetActive(true);
+        }
+
+        public void HideBoard()
+        {
+            board.SetActive(false);
+        }
+
         public void StoreBoardPositions()
         {
-            boardPlaces = new List<Vector3>();
+            initialBoardPlaces = new List<Vector3>();
             Transform[] places = board.GetComponentsInChildren<Transform>();
             foreach (Transform transform in places)
             {
                 if (transform.gameObject == board)
                     continue;
 
-                boardPlaces.Add(transform.position);
+                initialBoardPlaces.Add(transform.position);
                 Destroy(transform.gameObject);
-            }
-        }
-
-        private void onGameItemSelectedHandler(BoardItem item)
-        {
-            DestroyItem(item);
-        }
-
-        public void DestroyItem(BoardItem item)
-        {
-            Destroy(item.gameObject);
-        }
-
-        public void DestroyBoard()
-        {
-            BoardItem[] items = board.GetComponentsInChildren<BoardItem>();
-            foreach (BoardItem item in items)
-            {
-                Destroy(item.gameObject);
             }
         }
 
         public void Init()
         {
             DestroyBoard();
-            InitBoard(boardPlaces);
+            InitBoard(initialBoardPlaces);
             GameManager.instance.SetBoardManagerReady(true);
         }
 
@@ -97,20 +93,37 @@ namespace LastOneOut
             }
         }
 
+        public BoardItem CreateItem(Vector3 position)
+        {
+            GameObject item = Instantiate(boardItemPrefab, position, Quaternion.identity, board.transform);
+            item.transform.localRotation = Quaternion.identity;
+            return item.GetComponent<BoardItem>();
+        }
+
         public void AddItem(Vector3 position)
         {
-            GameObject newItem = Instantiate(boardItemPrefab, position, Quaternion.identity, board.transform);
-            newItem.transform.localRotation = Quaternion.identity;
+            BoardItem item = CreateItem(position);
+            string itemId = item.Init();
+            if (GameManager.instance.currentGameData.boardItems != null)
+                GameManager.instance.currentGameData.boardItems.Add(itemId, item);
         }
 
-        public void ShowBoard()
+        public void DestroyItem(BoardItem item)
         {
-            board.SetActive(true);
+            if (GameManager.instance.currentGameData.boardItems != null)
+                GameManager.instance.currentGameData.boardItems.Remove(item.id);
+            Destroy(item.gameObject);
         }
 
-        public void HideBoard()
+        public void DestroyBoard()
         {
-            board.SetActive(false);
+            if(GameManager.instance.currentGameData.boardItems != null)
+                GameManager.instance.currentGameData.boardItems.Clear();
+            BoardItem[] items = board.GetComponentsInChildren<BoardItem>();
+            foreach (BoardItem item in items)
+            {
+                Destroy(item.gameObject);
+            }
         }
     }
 }

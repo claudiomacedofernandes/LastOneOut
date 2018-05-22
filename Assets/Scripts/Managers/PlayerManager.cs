@@ -5,11 +5,6 @@ namespace LastOneOut
 {
     public class PlayerManager : MonoBehaviour
     {
-        private IPlayer currentPlayer = null;
-        private IPlayer playerOne = null;
-        private IPlayer playerTwo = null;
-        private bool getUserInput = false;
-
         private void OnEnable()
         {
             GameManager.instance.onGameStateChange += OnGameStateChangeHandler;
@@ -20,31 +15,6 @@ namespace LastOneOut
         {
             GameManager.instance.onGameStateChange -= OnGameStateChangeHandler;
             GameManager.instance.onGameTurnChange -= OnGameTurnChangeHandler;
-        }
-
-        private void Update()
-        {
-            if (getUserInput == false)
-                return;
-
-            if (Input.GetMouseButtonDown(0))
-                ProcessInput(Input.mousePosition);
-        }
-
-        private void ProcessInput(Vector3 screenPosition)
-        {
-            if (currentPlayer == null)
-                return;
-
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Physics.Raycast(ray, out hit);
-            if (hit.collider != null && hit.collider.gameObject != null)
-            {
-                BoardItem item = hit.collider.gameObject.GetComponentInParent<BoardItem>();
-                if (item != null)
-                    currentPlayer.SelectItem(item);
-            }
         }
 
         public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
@@ -69,71 +39,48 @@ namespace LastOneOut
             }
         }
 
-        private void OnGameTurnChangeHandler(PlayerIndex playerIndex)
+        private void OnGameTurnChangeHandler()
         {
-            switch (playerIndex)
+            switch (GameManager.instance.currentGameData.currentPlayerIndex)
             {
                 case PlayerIndex.NONE:
-                    currentPlayer = null;
+                    GameManager.instance.currentGameData.currentPlayer = null;
                     break;
                 case PlayerIndex.PLAYER_ONE:
-                    currentPlayer = playerOne;
-                    playerOne.StartTurn();
+                    GameManager.instance.currentGameData.currentPlayer = GameManager.instance.currentGameData.playerOne;
+                    GameManager.instance.currentGameData.playerOne.StartTurn();
                     break;
                 case PlayerIndex.PLAYER_TWO:
-                    currentPlayer = playerTwo;
-                    playerTwo.StartTurn();
+                    GameManager.instance.currentGameData.currentPlayer = GameManager.instance.currentGameData.playerTwo;
+                    GameManager.instance.currentGameData.playerTwo.StartTurn();
                     break;
             }
-        }
-
-        private void OnItemSelectedHandler(BoardItem item)
-        {
-            GameManager.instance.SelectBoardItem(item);
-        }
-
-        private void OnStartUserInputHandler()
-        {
-            getUserInput = true;
-        }
-
-        private void OnStopUserInputHandler()
-        {
-            getUserInput = false;
         }
 
         public void Init(GameInfo gameInfo)
         {
-            if (playerOne != null)
+            if (GameManager.instance.currentGameData.playerOne != null)
             {
-                playerOne.OnItemSelected -= OnItemSelectedHandler;
-                playerOne.OnStartUserInput -= OnStartUserInputHandler;
-                playerOne.OnStopUserInput -= OnStopUserInputHandler;
+                GameManager.instance.currentGameData.playerOne.OnItemSelected -= OnItemSelectedHandler;
             }
-            if (playerTwo != null)
+            if (GameManager.instance.currentGameData.playerTwo != null)
             {
-                playerTwo.OnItemSelected -= OnItemSelectedHandler;
-                playerTwo.OnStartUserInput -= OnStartUserInputHandler;
-                playerTwo.OnStopUserInput -= OnStopUserInputHandler;
+                GameManager.instance.currentGameData.playerTwo.OnItemSelected -= OnItemSelectedHandler;
             }
 
-            playerOne = null;
-            playerTwo = null;
+            GameManager.instance.currentGameData.playerOne = null;
+            GameManager.instance.currentGameData.playerTwo = null;
 
-            CreatePlayer(out playerOne, gameInfo.playerOneType);
-            CreatePlayer(out playerTwo, gameInfo.playerTwoType);
+            CreatePlayer(out GameManager.instance.currentGameData.playerOne, gameInfo.playerOneType);
+            CreatePlayer(out GameManager.instance.currentGameData.playerTwo, gameInfo.playerTwoType);
 
-            if (playerOne != null)
+            if (GameManager.instance.currentGameData.playerOne != null)
             {
-                playerOne.OnItemSelected += OnItemSelectedHandler;
-                playerOne.OnStartUserInput += OnStartUserInputHandler;
-                playerOne.OnStopUserInput += OnStopUserInputHandler;
+                GameManager.instance.currentGameData.playerOne.OnItemSelected += OnItemSelectedHandler;
             }
-            if (playerTwo != null)
+            if (GameManager.instance.currentGameData.playerTwo != null)
             {
-                playerTwo.OnItemSelected += OnItemSelectedHandler;
-                playerTwo.OnStartUserInput += OnStartUserInputHandler;
-                playerTwo.OnStopUserInput += OnStopUserInputHandler;
+                GameManager.instance.currentGameData.playerTwo.OnItemSelected += OnItemSelectedHandler;
             }
 
             GameManager.instance.SetPlayerManagerReady(true);
@@ -155,6 +102,11 @@ namespace LastOneOut
                     player = new PlayerNimatron();
                     break;
             }
+        }
+
+        private void OnItemSelectedHandler(BoardItem item)
+        {
+            GameManager.instance.SelectBoardItem(item);
         }
     }
 }

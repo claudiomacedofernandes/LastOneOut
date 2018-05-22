@@ -4,25 +4,23 @@ namespace LastOneOut
 {
     public class PlayerHuman : IPlayer
     {
-        public event OnStartUserInputEvent OnStartUserInput = null;
-        public event OnStopUserInputEvent OnStopUserInput = null;
         public event OnItemSelectedEvent OnItemSelected = null;
 
         public void StartTurn()
         {
             Debug.Log("Human StartTurn");
-            if (OnStartUserInput != null)
-                OnStartUserInput();
+            InputManager.instance.onItemSelected += onItemSelectedHandler;
+            InputManager.instance.StartInputTracking();
         }
 
         public void EndTurn()
         {
             Debug.Log("Human EndTurn");
-            if (OnStopUserInput != null)
-                OnStopUserInput();
+            InputManager.instance.onItemSelected -= onItemSelectedHandler;
+            InputManager.instance.StopInputTracking();
         }
 
-        public void SelectItem(BoardItem item)
+        public void onItemSelectedHandler(BoardItem item)
         {
             if (OnItemSelected != null)
                 OnItemSelected(item);

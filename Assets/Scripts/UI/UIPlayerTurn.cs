@@ -17,9 +17,9 @@ namespace LastOneOut
             GameManager.instance.onGameTurnChange -= OnGameTurnChangeHandler;
         }
 
-        private void OnGameTurnChangeHandler(PlayerIndex playerIndex)
+        private void OnGameTurnChangeHandler()
         {
-            textPlayer.text = playerIndex.ToString();
+            textPlayer.text = GameManager.instance.currentGameData.currentPlayerIndex.ToString();
         }
     }
 }
