@@ -43,13 +43,13 @@ namespace LastOneOut
             GameManager.instance.StartTurn();
         }
 
-        public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
+        public void OnGameStateChangeHandler(object stateInfo = null)
         {
             SetGameMenu(false);
-            homeCanvas.SetActive(newGameState == GameState.MENU);
-            setupCanvas.SetActive(newGameState == GameState.SETUP);
-            gameCanvas.SetActive(newGameState == GameState.RUN);
-            endCanvas.SetActive(newGameState == GameState.END);
+            homeCanvas.SetActive(GameManager.instance.gameState == GameState.MENU);
+            setupCanvas.SetActive(GameManager.instance.gameState == GameState.SETUP);
+            gameCanvas.SetActive(GameManager.instance.gameState == GameState.RUN);
+            endCanvas.SetActive(GameManager.instance.gameState == GameState.END);
         }
 
         private void OnGameTurnChangeHandler()

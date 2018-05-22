@@ -8,6 +8,7 @@ namespace LastOneOut
         public IPlayer playerOne = null;
         public IPlayer playerTwo = null;
         public IPlayer currentPlayer = null;
+        public int currentPlayerMoves = 0;
         public PlayerIndex currentPlayerIndex = PlayerIndex.NONE;
         public Dictionary<string, BoardItem> boardItems = null;
 

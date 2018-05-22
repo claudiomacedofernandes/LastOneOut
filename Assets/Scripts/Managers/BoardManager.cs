@@ -27,9 +27,9 @@ namespace LastOneOut
             GameManager.instance.onGameItemSelected -= OnGameItemSelectedHandler;
         }
 
-        public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
+        public void OnGameStateChangeHandler(object stateInfo = null)
         {
-            switch (newGameState)
+            switch (GameManager.instance.gameState)
             {
                 case GameState.NONE:
                 case GameState.MENU:
@@ -37,7 +37,7 @@ namespace LastOneOut
                     HideBoard();
                     break;
                 case GameState.NEW_GAME:
-                    Init();
+                    OnGameStart();
                     break;
                 case GameState.SETUP:
                     ShowBoard();
@@ -45,8 +45,20 @@ namespace LastOneOut
                 case GameState.RUN:
                     break;
                 case GameState.END:
+                    OnGameEnd();
                     break;
             }
+        }
+
+        public void OnGameStart()
+        {
+            DestroyBoard();
+            InitBoard(initialBoardPlaces);
+            GameManager.instance.SetBoardManagerReady(true);
+        }
+
+        public void OnGameEnd()
+        {
         }
 
         private void OnGameItemSelectedHandler(BoardItem item)
@@ -76,13 +88,6 @@ namespace LastOneOut
                 initialBoardPlaces.Add(transform.position);
                 Destroy(transform.gameObject);
             }
-        }
-
-        public void Init()
-        {
-            DestroyBoard();
-            InitBoard(initialBoardPlaces);
-            GameManager.instance.SetBoardManagerReady(true);
         }
 
         public void InitBoard(List<Vector3> places)

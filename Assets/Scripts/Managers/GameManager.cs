@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace LastOneOut
 {
     public class GameManager : MonoBehaviour
     {
         [HideInInspector] public static GameManager instance = null;
-        [HideInInspector] public System.Action<GameState, object> onGameStateChange = null;
+        [HideInInspector] public System.Action<object> onGameStateChange = null;
         [HideInInspector] public System.Action onGameTurnChange = null;
         [HideInInspector] public System.Action<BoardItem> onGameItemSelected = null;
         public GameState prevGameState = GameState.NONE;
@@ -13,6 +14,9 @@ namespace LastOneOut
         public GameData currentGameData = null;
         private bool boardManagerReady = false;
         private bool playerManagerReady = false;
+
+        [Range(1, 10)]
+        public int maxTurnMoves = 3;
 
         void Awake()
         {
@@ -47,35 +51,37 @@ namespace LastOneOut
 
             if (onGameTurnChange != null)
                 onGameTurnChange();
+
+            currentGameData.currentPlayerMoves = 0;
         }
 
         public void SetGameState(GameState newGameState, object stateInfo = null)
         {
-            if (newGameState == GameState.NEW_GAME)
-                ResetGameReadyState();
-
-            if (onGameStateChange != null)
-                onGameStateChange(newGameState, stateInfo);
-
             prevGameState = gameState;
             gameState = newGameState;
 
-            if (newGameState == GameState.NEW_GAME)
-                CheckGameReadyState();
+            if (gameState == GameState.END)
+                ResetGameReadyState();
 
-            Debug.Log("SetGameState: " + gameState);
+            if (CheckGameReadyState() == true)
+                gameState = GameState.SETUP;
+
+            if (onGameStateChange != null)
+                onGameStateChange(stateInfo); 
         }
 
         public void SetBoardManagerReady(bool newState)
         {
             boardManagerReady = newState;
-            CheckGameReadyState();
+            if (CheckGameReadyState() == true)
+                SetGameState(GameState.SETUP);
         }
 
         public void SetPlayerManagerReady(bool newState)
         {
             playerManagerReady = newState;
-            CheckGameReadyState();
+            if (CheckGameReadyState() == true)
+                SetGameState(GameState.SETUP);
         }
 
         public void ResetGameReadyState()
@@ -84,28 +90,36 @@ namespace LastOneOut
             playerManagerReady = false;
         }
 
-        public void CheckGameReadyState()
+        public bool CheckGameReadyState()
         {
             if (gameState != GameState.NEW_GAME)
-                return;
+                return false;
 
             if (boardManagerReady == false)
-                return;
+                return false;
 
             if (playerManagerReady == false)
-                return;
+                return false;
 
-            SetGameState(GameState.SETUP);
+            return true;
         }
 
         public void SelectBoardItem(BoardItem selectedItem)
         {
+            if (CheckPlayerTurn() == false)
+                return;
+
+            currentGameData.currentPlayerMoves++;
+
             if (onGameItemSelected != null)
-            {
                 onGameItemSelected(selectedItem);
-            }
 
             CheckGameEnd();
+        }
+
+        public bool CheckPlayerTurn()
+        {
+            return currentGameData.currentPlayerMoves < maxTurnMoves;
         }
 
         public void CheckGameEnd()

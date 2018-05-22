@@ -17,30 +17,53 @@ namespace LastOneOut
             GameManager.instance.onGameTurnChange -= OnGameTurnChangeHandler;
         }
 
-        public void OnGameStateChangeHandler(GameState newGameState, object stateInfo = null)
+        public void OnGameStateChangeHandler(object stateInfo = null)
         {
-            switch (newGameState)
+            switch (GameManager.instance.gameState)
             {
                 case GameState.NONE:
                     break;
                 case GameState.MENU:
                     break;
                 case GameState.NEW_GAME:
-                    Init((GameInfo)stateInfo);
+                    OnGameStart((GameInfo)stateInfo);
                     break;
                 case GameState.SETUP:
                     break;
                 case GameState.RUN:
                     break;
                 case GameState.END:
+                    OnGameEnd();
                     break;
                 case GameState.EXIT:
                     break;
             }
         }
 
+        public void OnGameStart(GameInfo gameInfo)
+        {
+            GameManager.instance.currentGameData.playerOne = CreatePlayer(gameInfo.playerOneType);
+            GameManager.instance.currentGameData.playerTwo = CreatePlayer(gameInfo.playerTwoType);
+            GameManager.instance.SetPlayerManagerReady(true);
+        }
+
+        public void OnGameEnd()
+        {
+            if (GameManager.instance.currentGameData.currentPlayer != null)
+            {
+                GameManager.instance.currentGameData.currentPlayer.EndTurn();
+                GameManager.instance.currentGameData.currentPlayer.OnItemSelected -= OnItemSelectedHandler;
+            }
+        }
+
         private void OnGameTurnChangeHandler()
         {
+            if (GameManager.instance.currentGameData.currentPlayer != null)
+            {
+                GameManager.instance.currentGameData.currentPlayer.EndTurn();
+                GameManager.instance.currentGameData.currentPlayer.OnItemSelected -= OnItemSelectedHandler;
+            }
+
             switch (GameManager.instance.currentGameData.currentPlayerIndex)
             {
                 case PlayerIndex.NONE:
@@ -48,47 +71,22 @@ namespace LastOneOut
                     break;
                 case PlayerIndex.PLAYER_ONE:
                     GameManager.instance.currentGameData.currentPlayer = GameManager.instance.currentGameData.playerOne;
-                    GameManager.instance.currentGameData.playerOne.StartTurn();
                     break;
                 case PlayerIndex.PLAYER_TWO:
                     GameManager.instance.currentGameData.currentPlayer = GameManager.instance.currentGameData.playerTwo;
-                    GameManager.instance.currentGameData.playerTwo.StartTurn();
                     break;
             }
+
+            if (GameManager.instance.currentGameData.currentPlayer != null)
+            {
+                GameManager.instance.currentGameData.currentPlayer.OnItemSelected += OnItemSelectedHandler;
+                GameManager.instance.currentGameData.currentPlayer.StartTurn();
+            }
         }
 
-        public void Init(GameInfo gameInfo)
+        private IPlayer CreatePlayer(PlayerType playerType)
         {
-            if (GameManager.instance.currentGameData.playerOne != null)
-            {
-                GameManager.instance.currentGameData.playerOne.OnItemSelected -= OnItemSelectedHandler;
-            }
-            if (GameManager.instance.currentGameData.playerTwo != null)
-            {
-                GameManager.instance.currentGameData.playerTwo.OnItemSelected -= OnItemSelectedHandler;
-            }
-
-            GameManager.instance.currentGameData.playerOne = null;
-            GameManager.instance.currentGameData.playerTwo = null;
-
-            CreatePlayer(out GameManager.instance.currentGameData.playerOne, gameInfo.playerOneType);
-            CreatePlayer(out GameManager.instance.currentGameData.playerTwo, gameInfo.playerTwoType);
-
-            if (GameManager.instance.currentGameData.playerOne != null)
-            {
-                GameManager.instance.currentGameData.playerOne.OnItemSelected += OnItemSelectedHandler;
-            }
-            if (GameManager.instance.currentGameData.playerTwo != null)
-            {
-                GameManager.instance.currentGameData.playerTwo.OnItemSelected += OnItemSelectedHandler;
-            }
-
-            GameManager.instance.SetPlayerManagerReady(true);
-        }
-
-        private void CreatePlayer(out IPlayer player, PlayerType playerType)
-        {
-            player = null;
+            IPlayer player = null;
 
             switch (playerType)
             {
@@ -102,6 +100,8 @@ namespace LastOneOut
                     player = new PlayerNimatron();
                     break;
             }
+
+            return player;
         }
 
         private void OnItemSelectedHandler(BoardItem item)
