@@ -6,8 +6,11 @@ namespace LastOneOut
 {
     public class BoardManager : MonoBehaviour
     {
+        [Header("Board GameObjects")]
         public GameObject board = null;
+        [Header("Board Prefabs")]
         public GameObject boardItemPrefab = null;
+
         private List<Vector3> initialBoardPlaces = null;
 
         private void Start()

@@ -5,24 +5,24 @@ namespace LastOneOut
 {
     public class GameManager : MonoBehaviour
     {
+        [Header("Game Settings")]
+        [Range(1, 10)] public int minTurnMoves = 1;
+        [Range(1, 10)] public int maxTurnMoves = 3;
+        [Range(0.1f, 10.0f)] public float aiWaitTime = 1.0f;
+        public AIDificulty aIDifficulty = AIDificulty.HARD;
+
+        [Header("Game State")]
+        public GameState prevGameState = GameState.NONE;
+        public GameState gameState = GameState.NONE;
+        public GameData currentGameData = null;
+
         [HideInInspector] public static GameManager instance = null;
         [HideInInspector] public System.Action<object> onGameStateChange = null;
         [HideInInspector] public System.Action onGameTurnChange = null;
         [HideInInspector] public System.Action<BoardItem> onGameItemSelected = null;
         [HideInInspector] public System.Action<bool> onTurnEnabledChange = null;
-        public GameState prevGameState = GameState.NONE;
-        public GameState gameState = GameState.NONE;
-        public GameData currentGameData = null;
         private bool boardManagerReady = false;
         private bool playerManagerReady = false;
-
-        [Range(1, 10)]
-        public int minTurnMoves = 1;
-        [Range(1, 10)]
-        public int maxTurnMoves = 3;
-        [Range(0.1f, 10.0f)]
-        public float aiWaitTime = 1.0f;
-        public AIDificulty aIDifficulty = AIDificulty.HARD;
 
         void Awake()
         {

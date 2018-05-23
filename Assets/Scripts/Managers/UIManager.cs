@@ -5,6 +5,7 @@ namespace LastOneOut
 {
     public class UIManager : MonoBehaviour
     {
+        [Header("Canvas GameObjects")]
         public GameObject homeCanvas = null;
         public GameObject setupCanvas = null;
         public GameObject gameCanvas = null;
