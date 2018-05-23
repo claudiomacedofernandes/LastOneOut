@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace LastOneOut
 {
-    public class InputManager : MonoBehaviour
+    public class UserInput : MonoBehaviour
     {
 
-        [HideInInspector] public static InputManager instance = null;
+        [HideInInspector] public static UserInput instance = null;
 
         public System.Action<BoardItem> onItemSelected = null;
         private bool trackInput = false;
@@ -53,13 +51,13 @@ namespace LastOneOut
             }
         }
 
-        public void StartInputTracking()
+        public void StartInput()
         {
             lastClick = waitInterval;
             trackInput = true;
         }
 
-        public void StopInputTracking()
+        public void StopInput()
         {
             lastClick = waitInterval;
             trackInput = false;

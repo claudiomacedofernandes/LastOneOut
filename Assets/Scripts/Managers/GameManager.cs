@@ -20,6 +20,9 @@ namespace LastOneOut
         public int minTurnMoves = 1;
         [Range(1, 10)]
         public int maxTurnMoves = 3;
+        [Range(0.1f, 10.0f)]
+        public float aiWaitTime = 1.0f;
+        public AIDificulty aIDifficulty = AIDificulty.HARD;
 
         void Awake()
         {
@@ -56,7 +59,7 @@ namespace LastOneOut
             SetGameState(GameState.NEW_GAME, gameInfo);
         }
 
-        public void StartTurn(PlayerIndex playerIndex = PlayerIndex.NONE)
+        public void StartNewTurn(PlayerIndex playerIndex = PlayerIndex.NONE)
         {
             if (onTurnEnabledChange != null)
                 onTurnEnabledChange(false);
@@ -118,7 +121,9 @@ namespace LastOneOut
 
             currentGameData.currentPlayerMoves++;
 
-            if (CheckPlayerFirstMove() == true && onTurnEnabledChange != null)
+            if (currentGameData.currentPlayer.GetType().Equals(typeof(PlayerHuman))
+                && CheckPlayerFirstMove() == true
+                && onTurnEnabledChange != null)
                 onTurnEnabledChange(true);
 
             if (onGameItemSelected != null)
@@ -141,11 +146,6 @@ namespace LastOneOut
         {
             if (currentGameData.boardItems.Count == 0)
             {
-                IPlayer winner = currentGameData.currentPlayerIndex == PlayerIndex.PLAYER_ONE ? currentGameData.playerTwo : currentGameData.playerOne;
-                string winnerString = winner == currentGameData.playerOne ? "playerOne" : "playerTwo";
-                Debug.Log("Game Ended");
-                Debug.Log("Winner Is: " + winnerString);
-
                 SetGameState(GameState.END);
             }
         }

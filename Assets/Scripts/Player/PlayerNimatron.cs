@@ -8,12 +8,21 @@ namespace LastOneOut
 
         public void StartTurn()
         {
-            Debug.Log("Nimatron StartTurn");
+            AIInput.instance.onItemSelected += OnItemSelectedHandler;
+            AIInput.instance.StartInput();
         }
 
         public void EndTurn()
         {
-            Debug.Log("Nimatron EndTurn");
+            AIInput.instance.onItemSelected -= OnItemSelectedHandler;
+            AIInput.instance.StopInput();
         }
+
+        private void OnItemSelectedHandler(BoardItem item)
+        {
+            if (OnItemSelected != null)
+                OnItemSelected(item);
+        }
+
     }
 }

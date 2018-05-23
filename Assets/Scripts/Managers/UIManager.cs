@@ -36,12 +36,12 @@ namespace LastOneOut
         public void StartNewGame(PlayerIndex playerIndex)
         {
             GameManager.instance.SetGameState(GameState.RUN);
-            GameManager.instance.StartTurn(playerIndex);
+            GameManager.instance.StartNewTurn(playerIndex);
         }
 
         public void EndPlayerRun()
         {
-            GameManager.instance.StartTurn();
+            GameManager.instance.StartNewTurn();
         }
 
         public void OnGameStateChangeHandler(object stateInfo = null)
@@ -51,11 +51,44 @@ namespace LastOneOut
             setupCanvas.SetActive(GameManager.instance.gameState == GameState.SETUP);
             gameCanvas.SetActive(GameManager.instance.gameState == GameState.RUN);
             endCanvas.SetActive(GameManager.instance.gameState == GameState.END);
+
+            switch (GameManager.instance.gameState)
+            {
+                case GameState.NONE:
+                    break;
+                case GameState.MENU:
+                    break;
+                case GameState.EXIT:
+                    break;
+                case GameState.END:
+                    OnGameEnd();
+                    break;
+                case GameState.NEW_GAME:
+                    OnGameStart();
+                    break;
+                case GameState.SETUP:
+                    break;
+            }
+        }
+
+
+        public void OnGameStart()
+        {
+        }
+
+        public void OnGameEnd()
+        {
+            if (GameManager.instance.currentGameData == null)
+                return;
+
+            IPlayer winner = GameManager.instance.currentGameData.currentPlayerIndex == PlayerIndex.PLAYER_ONE ? GameManager.instance.currentGameData.playerTwo : GameManager.instance.currentGameData.playerOne;
+            string winnerString = winner == GameManager.instance.currentGameData.playerOne ? "playerOne" : "playerTwo";
+            Debug.Log("Game Ended");
+            Debug.Log("Winner Is: " + winnerString);
         }
 
         private void OnGameTurnChangeHandler()
         {
-
         }
 
         public void OnButtonExit()

@@ -8,19 +8,17 @@ namespace LastOneOut
 
         public void StartTurn()
         {
-            Debug.Log("Human StartTurn");
-            InputManager.instance.onItemSelected += onItemSelectedHandler;
-            InputManager.instance.StartInputTracking();
+            UserInput.instance.onItemSelected += OnItemSelectedHandler;
+            UserInput.instance.StartInput();
         }
 
         public void EndTurn()
         {
-            Debug.Log("Human EndTurn");
-            InputManager.instance.onItemSelected -= onItemSelectedHandler;
-            InputManager.instance.StopInputTracking();
+            UserInput.instance.onItemSelected -= OnItemSelectedHandler;
+            UserInput.instance.StopInput();
         }
 
-        public void onItemSelectedHandler(BoardItem item)
+        private void OnItemSelectedHandler(BoardItem item)
         {
             if (OnItemSelected != null)
                 OnItemSelected(item);
