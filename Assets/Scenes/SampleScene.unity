@@ -354,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prevGameState: 0
   gameState: 0
+  minTurnMoves: 1
   maxTurnMoves: 3
 --- !u!1 &106439220
 GameObject:
@@ -3964,6 +3965,7 @@ GameObject:
   - component: {fileID: 1337999643}
   - component: {fileID: 1337999642}
   - component: {fileID: 1337999641}
+  - component: {fileID: 1337999644}
   m_Layer: 0
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -4048,6 +4050,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1337999644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1337999639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2761e121f7f7442a80440f81bb4171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endTurnButton: {fileID: 852034615}
 --- !u!1 &1344059024
 GameObject:
   m_ObjectHideFlags: 0

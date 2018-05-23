@@ -9,12 +9,15 @@ namespace LastOneOut
         [HideInInspector] public System.Action<object> onGameStateChange = null;
         [HideInInspector] public System.Action onGameTurnChange = null;
         [HideInInspector] public System.Action<BoardItem> onGameItemSelected = null;
+        [HideInInspector] public System.Action<bool> onTurnEnabledChange = null;
         public GameState prevGameState = GameState.NONE;
         public GameState gameState = GameState.NONE;
         public GameData currentGameData = null;
         private bool boardManagerReady = false;
         private bool playerManagerReady = false;
 
+        [Range(1, 10)]
+        public int minTurnMoves = 1;
         [Range(1, 10)]
         public int maxTurnMoves = 3;
 
@@ -24,6 +27,9 @@ namespace LastOneOut
                 instance = this;
             else if (instance != this)
                 Destroy(gameObject);
+
+            if (maxTurnMoves < minTurnMoves)
+                maxTurnMoves = minTurnMoves;
         }
 
         void Start()
@@ -52,6 +58,9 @@ namespace LastOneOut
 
         public void StartTurn(PlayerIndex playerIndex = PlayerIndex.NONE)
         {
+            if (onTurnEnabledChange != null)
+                onTurnEnabledChange(false);
+
             if (playerIndex == PlayerIndex.NONE)
                 currentGameData.currentPlayerIndex = currentGameData.currentPlayerIndex == PlayerIndex.PLAYER_ONE ? PlayerIndex.PLAYER_TWO : PlayerIndex.PLAYER_ONE;
             else
@@ -104,10 +113,13 @@ namespace LastOneOut
 
         public void SelectBoardItem(BoardItem selectedItem)
         {
-            if (CheckPlayerTurn() == false)
+            if (CheckPlayerMaxMoves() == true)
                 return;
 
             currentGameData.currentPlayerMoves++;
+
+            if (CheckPlayerFirstMove() == true && onTurnEnabledChange != null)
+                onTurnEnabledChange(true);
 
             if (onGameItemSelected != null)
                 onGameItemSelected(selectedItem);
@@ -115,9 +127,14 @@ namespace LastOneOut
             CheckGameEnd();
         }
 
-        public bool CheckPlayerTurn()
+        public bool CheckPlayerMaxMoves()
         {
-            return currentGameData.currentPlayerMoves < maxTurnMoves;
+            return currentGameData.currentPlayerMoves >= maxTurnMoves;
+        }
+
+        public bool CheckPlayerFirstMove()
+        {
+            return currentGameData.currentPlayerMoves == minTurnMoves;
         }
 
         public void CheckGameEnd()
