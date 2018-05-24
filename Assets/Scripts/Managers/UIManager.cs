@@ -105,7 +105,7 @@ namespace LastOneOut
 
         public void OnButtonCloseGameMenu()
         {
-            GameManager.instance.SetGameState(GameState.RUN);
+            GameManager.instance.SetGameState(GameManager.instance.prevGameState);
             SetGameMenu(false);
         }
 
