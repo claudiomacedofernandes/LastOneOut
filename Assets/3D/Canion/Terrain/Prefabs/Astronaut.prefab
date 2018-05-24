@@ -19,12 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4531398160938066}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1025961226639724
 GameObject:
@@ -34,12 +34,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4081398731149066}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1042509797480592
 GameObject:
@@ -49,12 +49,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4192555626186794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1045943730237356
 GameObject:
@@ -64,12 +64,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4312033369425654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1059407191459952
 GameObject:
@@ -79,12 +79,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4508950953672734}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LArmTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1065173749948596
 GameObject:
@@ -94,12 +94,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4803654974986990}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1074276733091740
 GameObject:
@@ -109,12 +109,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4839064523609910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1077491795149140
 GameObject:
@@ -124,12 +124,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4284574219218808}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RPinkyEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1085619653812142
 GameObject:
@@ -139,12 +139,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4557605361468384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1090508676247680
 GameObject:
@@ -154,12 +154,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4527432327211524}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1098414042211898
 GameObject:
@@ -169,12 +169,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4023303541988474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LForeArmTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1101193567128464
 GameObject:
@@ -184,12 +184,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4556158974492906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1107437255071940
 GameObject:
@@ -200,12 +200,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4218555260921290}
   - component: {fileID: 137498059564120746}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AirHose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1107703504318712
 GameObject:
@@ -215,12 +215,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4986503600316062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1111217566770336
 GameObject:
@@ -230,12 +230,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4865360222211814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1147089056711350
 GameObject:
@@ -245,12 +245,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4404733325226970}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RRingEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1152879144015754
 GameObject:
@@ -260,12 +260,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4143262437080520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1156711361794362
 GameObject:
@@ -275,12 +275,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4505652019600162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_COG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1166061810985968
 GameObject:
@@ -290,12 +290,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4261592235251866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PropBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1192469096787610
 GameObject:
@@ -305,12 +305,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4526414804583062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1193941718854648
 GameObject:
@@ -320,12 +320,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4265819735625704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_Footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1198227325916404
 GameObject:
@@ -335,12 +335,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4836581287237972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1203776200460794
 GameObject:
@@ -350,12 +350,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4898880269484054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1214668533531442
 GameObject:
@@ -365,12 +365,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4140756763255774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1219639562457650
 GameObject:
@@ -380,12 +380,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4958411440540064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LPinkyEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1238155981568148
 GameObject:
@@ -395,12 +395,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4634006916637684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1238882278663312
 GameObject:
@@ -410,12 +410,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4131654564311078}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1251143279524878
 GameObject:
@@ -425,12 +425,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4680478309813264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1255985847258016
 GameObject:
@@ -440,12 +440,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4644991913391798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1256098682582132
 GameObject:
@@ -455,12 +455,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4732151013257180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_Spine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1263452629009448
 GameObject:
@@ -470,12 +470,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4936698086012048}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RToeEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1263603283336108
 GameObject:
@@ -485,12 +485,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4284819005327562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RThighTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1294752526148804
 GameObject:
@@ -500,12 +500,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4990586335112812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1295945559113648
 GameObject:
@@ -515,12 +515,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4382862960527444}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Astronaut_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1296505091483738
 GameObject:
@@ -530,12 +530,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4945044842678390}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RForeArmTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1297659978355820
 GameObject:
@@ -545,12 +545,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4826985553294412}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LMiddleEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1311472508121088
 GameObject:
@@ -560,12 +560,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4841217106625682}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LCalfTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1317121930475424
 GameObject:
@@ -575,12 +575,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4314626692284850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LRingEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1355928613289862
 GameObject:
@@ -590,12 +590,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4804369802489236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1371109085268618
 GameObject:
@@ -605,12 +605,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4902593317402792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RCalfTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1372602177782610
 GameObject:
@@ -620,12 +620,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4601966634877080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RIndexEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1381879910466086
 GameObject:
@@ -635,12 +635,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4788592086979842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1387467577100830
 GameObject:
@@ -650,12 +650,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4848008151431892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1434336910651010
 GameObject:
@@ -665,12 +665,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4951749121171394}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1435045241195946
 GameObject:
@@ -680,12 +680,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4571562441954036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LThumbEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1441096650718308
 GameObject:
@@ -695,12 +695,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4599955374343558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1464051507892082
 GameObject:
@@ -710,12 +710,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4327225229443222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RMiddleEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1467935943968564
 GameObject:
@@ -725,12 +725,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4791640853127676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LIndexEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1478483065875850
 GameObject:
@@ -741,12 +741,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4131067765817600}
   - component: {fileID: 137989368679935148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Astronaut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1487194752266700
 GameObject:
@@ -756,12 +756,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4235850820452718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RArmTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1490798188106890
 GameObject:
@@ -771,12 +771,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4235433252526594}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1500520248687250
 GameObject:
@@ -786,12 +786,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4429446357339628}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1502665473733052
 GameObject:
@@ -801,12 +801,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4598420168493882}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LToeEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1506258060163638
 GameObject:
@@ -816,12 +816,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4580458638455022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1509748278742200
 GameObject:
@@ -831,12 +831,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4826113475392282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1511656645581152
 GameObject:
@@ -846,12 +846,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4673981196914718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1514115722830850
 GameObject:
@@ -861,12 +861,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4153494533467650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1521976848791698
 GameObject:
@@ -876,12 +876,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4776444903321130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1536147433761320
 GameObject:
@@ -891,12 +891,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4226127969237096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1540621981447746
 GameObject:
@@ -906,12 +906,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4621377147800264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1546691120287340
 GameObject:
@@ -921,12 +921,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4674710554465828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RClav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1577370732757052
 GameObject:
@@ -936,12 +936,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4877580926403048}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1609914909645300
 GameObject:
@@ -951,12 +951,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4670268343302554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1619225784345320
 GameObject:
@@ -966,12 +966,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4392533166782482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1622961302597432
 GameObject:
@@ -981,12 +981,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4981021205719578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1646402768729836
 GameObject:
@@ -996,12 +996,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4574988824537436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1651572748519188
 GameObject:
@@ -1011,12 +1011,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4902780613374584}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1693428649635036
 GameObject:
@@ -1026,12 +1026,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4690222646635812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1704633242672276
 GameObject:
@@ -1041,12 +1041,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4878026748264514}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1709685193227780
 GameObject:
@@ -1056,12 +1056,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4465253175848678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RThumbEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1739790783315160
 GameObject:
@@ -1071,12 +1071,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4070037023296134}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1764440046561446
 GameObject:
@@ -1086,12 +1086,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4573049730979972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1767296013654806
 GameObject:
@@ -1101,12 +1101,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4665970595048866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bnHose08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1779699533278938
 GameObject:
@@ -1116,12 +1116,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4094035256364838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1781567998677890
 GameObject:
@@ -1131,12 +1131,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4945013575155232}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LClav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1788828524821934
 GameObject:
@@ -1146,12 +1146,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4192266919219292}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1797861799423690
 GameObject:
@@ -1161,12 +1161,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4255327121845500}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1815863730890978
 GameObject:
@@ -1176,12 +1176,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4505588116677570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1830513435169058
 GameObject:
@@ -1191,12 +1191,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4292713158036868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_HeadEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1843618694910920
 GameObject:
@@ -1206,12 +1206,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4914999907006482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1872721589139896
 GameObject:
@@ -1221,12 +1221,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4727282603197670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1915897837654090
 GameObject:
@@ -1238,12 +1238,12 @@ GameObject:
   - component: {fileID: 4621662532574114}
   - component: {fileID: 33710297123450506}
   - component: {fileID: 23763637142104732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TeapotPropRef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1954310571034088
 GameObject:
@@ -1253,12 +1253,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4536738766730414}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1956959950843450
 GameObject:
@@ -1268,12 +1268,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4363481397915596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1970998579954626
 GameObject:
@@ -1283,12 +1283,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4302145621445386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1975003813060024
 GameObject:
@@ -1298,12 +1298,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4423111071065884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1979235557424344
 GameObject:
@@ -1314,12 +1314,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4533809941201228}
   - component: {fileID: 95542022246908942}
-  m_Layer: 0
+  - component: {fileID: 114547201111070450}
+  m_Layer: 9
   m_Name: Astronaut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1979425996309248
 GameObject:
@@ -1329,12 +1330,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4236189180142824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LThighTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1980785979567456
 GameObject:
@@ -1344,12 +1345,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4465748551056498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1990961855199504
 GameObject:
@@ -1359,12 +1360,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4025210175103612}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_LForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1996774291600496
 GameObject:
@@ -1374,12 +1375,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4233917711354176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1997007872952904
 GameObject:
@@ -1389,12 +1390,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4489764276138948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bn_RIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4023303541988474
 Transform:
@@ -1997,16 +1998,16 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1979235557424344}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.8, y: 0.07500076, z: -4}
-  m_LocalScale: {x: 4.5, y: 2.25, z: 4.5}
+  m_LocalRotation: {x: -0, y: -0.96195567, z: -0, w: 0.27320573}
+  m_LocalPosition: {x: 0.7369807, y: 2.921, z: 1.6690335}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4218555260921290}
   - {fileID: 4131067765817600}
   - {fileID: 4382862960527444}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -148.29001, z: 0}
 --- !u!4 &4536738766730414
 Transform:
   m_ObjectHideFlags: 1
@@ -2746,6 +2747,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114547201111070450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1979235557424344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ba0a118bc38db459e3447d1fbfde62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95542022246908942}
 --- !u!137 &137498059564120746
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

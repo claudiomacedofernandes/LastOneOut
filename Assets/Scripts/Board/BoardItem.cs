@@ -9,7 +9,7 @@ namespace LastOneOut
         [SerializeField] private float disappearSpeed = 1.0F;
         [HideInInspector] public string id = null;
         private bool isDisappearing = false;
-        private Vector3 intialPosition = Vector3.zero;
+        private Vector3 initialPosition = Vector3.zero;
         private Vector3 endPosition = Vector3.zero;
         private float startTime = 0.0f;
         private float journeyLength = 0.0f;
@@ -21,9 +21,9 @@ namespace LastOneOut
             anim.onAnimationExit += OnAnimationExitHandler;
             anim.onAnimationDisappear += OnAnimationDisappearHandler;
 
-            intialPosition = gameObject.transform.position;
-            endPosition = new Vector3(intialPosition.x, intialPosition.y + journeyDistance, intialPosition.z);
-            journeyLength = Vector3.Distance(intialPosition, endPosition);
+            initialPosition = gameObject.transform.position;
+            endPosition = new Vector3(initialPosition.x, initialPosition.y + journeyDistance, initialPosition.z);
+            journeyLength = Vector3.Distance(initialPosition, endPosition);
             isDisappearing = false;
 
             return id;
@@ -78,7 +78,7 @@ namespace LastOneOut
 
             float distCovered = (Time.time - startTime) * disappearSpeed;
             float fracJourney = distCovered / journeyLength;
-            transform.position = Vector3.Lerp(intialPosition, endPosition, fracJourney);
+            transform.position = Vector3.Lerp(initialPosition, endPosition, fracJourney);
         }
 
     }
