@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace LastOneOut
 {
@@ -9,15 +8,15 @@ namespace LastOneOut
 
         private void OnEnable()
         {
-            GameManager.instance.onTurnEnabledChange += onTurnEnabledChangeHandler;
+            GameManager.instance.onTurnEnabledChange += OnTurnEnabledChangeHandler;
         }
 
         private void OnDisable()
         {
-            GameManager.instance.onTurnEnabledChange -= onTurnEnabledChangeHandler;
+            GameManager.instance.onTurnEnabledChange -= OnTurnEnabledChangeHandler;
         }
 
-        private void onTurnEnabledChangeHandler(bool enabled)
+        private void OnTurnEnabledChangeHandler(bool enabled)
         {
             endTurnButton.SetActive(enabled);
         }

@@ -146,6 +146,7 @@ namespace LastOneOut
         {
             if (currentGameData.boardItems.Count == 0)
             {
+                currentGameData.winnerPlayer = GameManager.instance.currentGameData.currentPlayerIndex == PlayerIndex.PLAYER_ONE ? PlayerIndex.PLAYER_TWO : PlayerIndex.PLAYER_ONE;
                 SetGameState(GameState.END);
             }
         }

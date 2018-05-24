@@ -5,7 +5,8 @@ namespace LastOneOut
 {
     public class UIPlayerTurn : MonoBehaviour
     {
-        public Text textPlayer = null;
+        [SerializeField] private Text playerText = null;
+        [SerializeField] private Text playerShadowText = null;
 
         private void OnEnable()
         {
@@ -19,7 +20,13 @@ namespace LastOneOut
 
         private void OnGameTurnChangeHandler()
         {
-            textPlayer.text = GameManager.instance.currentGameData.currentPlayerIndex.ToString();
+            playerText.text = GetCurrentPlayerName();
+            playerShadowText.text = playerText.text;
+        }
+
+        private string GetCurrentPlayerName()
+        {
+            return GameManager.instance.currentGameData.currentPlayerIndex == PlayerIndex.PLAYER_TWO ? "Player Two" : "Player One";
         }
     }
 }

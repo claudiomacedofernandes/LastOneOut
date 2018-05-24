@@ -79,13 +79,6 @@ namespace LastOneOut
 
         public void OnGameEnd()
         {
-            if (GameManager.instance.currentGameData == null)
-                return;
-
-            IPlayer winner = GameManager.instance.currentGameData.currentPlayerIndex == PlayerIndex.PLAYER_ONE ? GameManager.instance.currentGameData.playerTwo : GameManager.instance.currentGameData.playerOne;
-            string winnerString = winner == GameManager.instance.currentGameData.playerOne ? "playerOne" : "playerTwo";
-            Debug.Log("Game Ended");
-            Debug.Log("Winner Is: " + winnerString);
         }
 
         private void OnGameTurnChangeHandler()
