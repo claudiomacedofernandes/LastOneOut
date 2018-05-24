@@ -8,6 +8,7 @@ namespace LastOneOut
         [HideInInspector] public static UserInput instance = null;
 
         public System.Action<BoardItem> onItemSelected = null;
+        private bool lastTrackInput = false;
         private bool trackInput = false;
         private float lastClick = 0f;
         private readonly float waitInterval = 0.1f;
@@ -61,6 +62,21 @@ namespace LastOneOut
         {
             lastClick = waitInterval;
             trackInput = false;
+        }
+
+        public void PauseInput()
+        {
+            lastTrackInput = trackInput;
+            StopInput();
+        }
+
+        public void ResumeInput()
+        {
+            if (lastTrackInput == false)
+                return;
+
+            lastTrackInput = false;
+            StartInput();
         }
     }
 }

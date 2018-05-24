@@ -9,6 +9,8 @@ namespace LastOneOut
         [HideInInspector] public static AIInput instance = null;
 
         public System.Action<BoardItem> onItemSelected = null;
+        private bool lastComputeInput = false;
+        private bool computeInput = false;
         private int numMoves = 0;
 
         void Awake()
@@ -55,11 +57,15 @@ namespace LastOneOut
 
             while (numMoves > 0)
             {
-                BoardItem item = DecideItem();
-                if (onItemSelected != null)
-                    onItemSelected(item);
+                if (computeInput == true)
+                {
+                    BoardItem item = DecideItem();
+                    if (onItemSelected != null)
+                        onItemSelected(item);
 
-                numMoves--;
+                    numMoves--;
+                }
+
                 yield return new WaitForSeconds(GameManager.instance.aiWaitTime);
             }
 
@@ -70,6 +76,7 @@ namespace LastOneOut
 
         public void StartInput()
         {
+            computeInput = true;
             numMoves = DecideMoves();
             StopCoroutine("DoMoves");
             StartCoroutine("DoMoves");
@@ -77,8 +84,24 @@ namespace LastOneOut
 
         public void StopInput()
         {
+            computeInput = false;
             StopCoroutine("DoMoves");
             numMoves = 0;
+        }
+
+        public void PauseInput()
+        {
+            lastComputeInput = computeInput;
+            StopInput();
+        }
+
+        public void ResumeInput()
+        {
+            if (lastComputeInput == false)
+                return;
+
+            lastComputeInput = false;
+            StartInput();
         }
     }
 }

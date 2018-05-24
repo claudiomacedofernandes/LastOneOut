@@ -30,6 +30,12 @@ namespace LastOneOut
                 case GameState.NEW_GAME:
                     OnGameStart((GameInfo)stateInfo);
                     break;
+                case GameState.PAUSE:
+                    OnGamePause();
+                    break;
+                case GameState.RUN:
+                    OnGameRun();
+                    break;
             }
         }
 
@@ -38,6 +44,22 @@ namespace LastOneOut
             GameManager.instance.currentGameData.playerOne = CreatePlayer(gameInfo.playerOneType);
             GameManager.instance.currentGameData.playerTwo = CreatePlayer(gameInfo.playerTwoType);
             GameManager.instance.SetPlayerManagerReady(true);
+        }
+
+        public void OnGamePause()
+        {
+            if (GameManager.instance.currentGameData.currentPlayer != null)
+            {
+                GameManager.instance.currentGameData.currentPlayer.PauseTurn();
+            }
+        }
+
+        public void OnGameRun()
+        {
+            if (GameManager.instance.currentGameData.currentPlayer != null)
+            {
+                GameManager.instance.currentGameData.currentPlayer.ResumeTurn();
+            }
         }
 
         public void OnGameEnd()

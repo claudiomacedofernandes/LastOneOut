@@ -97,11 +97,13 @@ namespace LastOneOut
 
         public void OnButtonOpenGameMenu()
         {
+            GameManager.instance.SetGameState(GameState.PAUSE);
             SetGameMenu(true);
         }
 
         public void OnButtonCloseGameMenu()
         {
+            GameManager.instance.SetGameState(GameState.RUN);
             SetGameMenu(false);
         }
 

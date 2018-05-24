@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace LastOneOut
+﻿namespace LastOneOut
 {
     public delegate void OnItemSelectedEvent(BoardItem item);
 
@@ -10,5 +8,7 @@ namespace LastOneOut
 
         void StartTurn();
         void EndTurn();
+        void PauseTurn();
+        void ResumeTurn();
     }
 }

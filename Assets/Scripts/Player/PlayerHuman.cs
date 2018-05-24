@@ -18,6 +18,16 @@ namespace LastOneOut
             UserInput.instance.StopInput();
         }
 
+        public void PauseTurn()
+        {
+            UserInput.instance.PauseInput();
+        }
+
+        public void ResumeTurn()
+        {
+            UserInput.instance.ResumeInput();
+        }
+
         private void OnItemSelectedHandler(BoardItem item)
         {
             if (OnItemSelected != null)

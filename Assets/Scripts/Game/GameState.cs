@@ -7,6 +7,7 @@
         NEW_GAME,
         SETUP,
         RUN,
+        PAUSE,
         END,
         EXIT
     };
