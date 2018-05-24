@@ -39,8 +39,8 @@ public class AnimBehaviour : StateMachineBehaviour {
         animator.SetInteger(variableName, randAnimation);
 	}
 
-	// OnStateMachineExit is called when exiting a statemachine via its Exit Node
-	//override public void OnStateMachineExit(Animator animator, int stateMachinePathHash) {
-    //  Debug.Log("OnStateMachineExit");
+    // OnStateMachineExit is called when exiting a statemachine via its Exit Node
+    //override public void OnStateMachineExit(Animator animator, int stateMachinePathHash) {
+    //
     //}
 }

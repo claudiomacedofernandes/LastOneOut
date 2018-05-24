@@ -7,11 +7,13 @@ using NSubstitute;
 using LastOneOut;
 
 [TestFixture]
-public class TestPlayMode
+public class TestsIntegration
 {
     public int numExpectedItems = 20;
-    public int minMoves = 1;
-    public int maxMoves = 3;
+    public int minTurnMoves = 1;
+    public int maxTurnMoves = 3;
+    public float aiWaitTime = 1.0f;
+    public AIDificulty aIDifficulty = AIDificulty.HARD;
 
     [SetUp]
     public void SetUp()
@@ -60,7 +62,7 @@ public class TestPlayMode
     [UnityTest, Repeat(10)]
     public IEnumerator Scene_GameManager_ExistsAndIsUnique()
     {
-        GameManager gameManager = MockGameManager();
+        MockGameManager();
         yield return new WaitForEndOfFrame();
         int numGameManagers = GameObject.FindObjectsOfType<GameManager>().Length;
         Assert.True(numGameManagers == 1);
@@ -177,31 +179,5 @@ public class TestPlayMode
         BoardItem boardItem = CreateBoardItem();
         gameManager.SelectBoardItem(boardItem);
         Received.InOrder(() => { boardMAnager.OnGameItemSelectedHandler(boardItem); });
-    }
-
-    [Test]
-    public void CheckPlayerMaxMoves_OnFail_ReturnsFalse()
-    {
-        GameManager gameManager = MockGameManager();
-        gameManager.maxTurnMoves = maxMoves;
-        Assert.False(gameManager.CheckPlayerMaxMoves(maxMoves + 1));
-    }
-
-    [Test]
-    public void CheckPlayerMinMoves_OnFail_ReturnsFalse()
-    {
-        GameManager gameManager = MockGameManager();
-        gameManager.minTurnMoves = minMoves;
-        Assert.False(gameManager.CheckPlayerMinMoves(minMoves - 1));
-    }
-
-    [Test]
-    public void CheckGameEnd_GameStateEnd_True()
-    {
-        GameManager gameManager = MockGameManager();
-        gameManager.currentGameData = new GameData();
-        gameManager.currentGameData.boardItems = new Dictionary<string, BoardItem>();
-        gameManager.CheckGameEnd();
-        Assert.True(gameManager.gameState == GameState.END);
     }
 }

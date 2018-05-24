@@ -14072,7 +14072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTurnMoves: 1
   maxTurnMoves: 3
-  aiWaitTime: 0.1
+  aiWaitTime: 1
   aIDifficulty: 2
   prevGameState: 0
   gameState: 0

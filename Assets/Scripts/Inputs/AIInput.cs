@@ -28,20 +28,27 @@ namespace LastOneOut
             switch (GameManager.instance.aIDifficulty)
             {
                 case AIDificulty.EASY:
-                    multiplier = Random.Range(2, GameManager.instance.maxTurnMoves);
+                    multiplier = Random.Range(GameManager.instance.minTurnMoves + 1, GameManager.instance.maxTurnMoves);
                     break;
                 case AIDificulty.NORMAL:
-                    multiplier = Random.Range(1, GameManager.instance.maxTurnMoves + 1);
+                    multiplier = Random.Range(GameManager.instance.minTurnMoves, GameManager.instance.maxTurnMoves + 1);
                     break;
                 case AIDificulty.HARD:
-                    multiplier = GameManager.instance.maxTurnMoves;
+                    multiplier = GameManager.instance.maxTurnMoves + 1;
                     break;
             }
 
-            int division = Mathf.FloorToInt((GameManager.instance.currentGameData.boardItems.Count - 1) / multiplier);
-            int optimal = (division * multiplier) + 1;
+            int division = 0;
+            int optimal = 1;
+
+            if (GameManager.instance.currentGameData.boardItems.Count > (multiplier + 1))
+            {
+                division = Mathf.FloorToInt((GameManager.instance.currentGameData.boardItems.Count - 1) / multiplier);
+                optimal = (division * multiplier) + 1;
+            }
+
             int tmp = GameManager.instance.currentGameData.boardItems.Count - optimal;
-            return tmp == 0 ? GameManager.instance.maxTurnMoves : tmp;
+            return tmp <= 0 ? Random.Range(GameManager.instance.minTurnMoves, GameManager.instance.maxTurnMoves + 1) : tmp;
         }
 
         private BoardItem DecideItem()
