@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace LastOneOut
@@ -37,7 +38,8 @@ namespace LastOneOut
 
         void Start()
         {
-            SetGameState(GameState.MENU);
+            StopCoroutine("Load");
+            StartCoroutine("Load");
         }
 
         public void Update()
@@ -46,6 +48,15 @@ namespace LastOneOut
                 SetGameState(GameState.SETUP);
             else if (gameState == GameState.END)
                 ResetGameReadyState();
+        }
+
+        IEnumerator Load()
+        {
+            SetGameState(GameState.LOADING);
+            Shader.WarmupAllShaders();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(1.0f);
+            SetGameState(GameState.MENU);
         }
 
         void Quit()

@@ -3,6 +3,7 @@
     public enum GameState
     {
         NONE,
+        LOADING,
         MENU,
         NEW_GAME,
         SETUP,

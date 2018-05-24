@@ -6,6 +6,7 @@ namespace LastOneOut
     public class UIManager : MonoBehaviour
     {
         [Header("Canvas GameObjects")]
+        public GameObject loadingCanvas = null;
         public GameObject homeCanvas = null;
         public GameObject setupCanvas = null;
         public GameObject gameCanvas = null;
@@ -48,6 +49,7 @@ namespace LastOneOut
         public void OnGameStateChangeHandler(object stateInfo = null)
         {
             SetGameMenu(false);
+            loadingCanvas.SetActive(GameManager.instance.gameState == GameState.LOADING);
             homeCanvas.SetActive(GameManager.instance.gameState == GameState.MENU);
             setupCanvas.SetActive(GameManager.instance.gameState == GameState.SETUP);
             gameCanvas.SetActive(GameManager.instance.gameState == GameState.RUN);

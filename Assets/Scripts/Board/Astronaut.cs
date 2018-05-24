@@ -27,6 +27,7 @@ namespace LastOneOut
                 case GameState.END:
                     OnGameEnd();
                     break;
+                case GameState.LOADING:
                 case GameState.RUN:
                 case GameState.PAUSE:
                     break;

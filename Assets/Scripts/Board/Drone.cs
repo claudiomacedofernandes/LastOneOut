@@ -42,6 +42,7 @@ namespace LastOneOut
                 case GameState.SETUP:
                     Appear();
                     break;
+                case GameState.LOADING:
                 case GameState.RUN:
                 case GameState.PAUSE:
                     break;

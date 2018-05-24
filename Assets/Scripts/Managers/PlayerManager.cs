@@ -21,6 +21,8 @@ namespace LastOneOut
         {
             switch (GameManager.instance.gameState)
             {
+                case GameState.LOADING:
+                    break;
                 case GameState.NONE:
                 case GameState.MENU:
                 case GameState.EXIT:
