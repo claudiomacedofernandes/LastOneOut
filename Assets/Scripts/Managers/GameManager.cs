@@ -91,7 +91,9 @@ namespace LastOneOut
             prevGameState = gameState;
             gameState = newGameState;
 
-            if (onGameStateChange != null)
+            if (gameState == GameState.EXIT)
+                Quit();
+            else if (onGameStateChange != null)
                 onGameStateChange(stateInfo);
         }
 
