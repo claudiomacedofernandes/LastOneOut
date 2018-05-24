@@ -27,15 +27,16 @@ namespace LastOneOut
 
         public void SetGameMenu(bool isActive)
         {
-            menuCanvas.SetActive(isActive);
+            if(menuCanvas != null)
+                menuCanvas.SetActive(isActive);
         }
 
-        public void SetNewGame(GameInfo gameInfo)
+        public void StartNewGame(GameInfo gameInfo)
         {
             GameManager.instance.StartNewGame(gameInfo);
         }
 
-        public void StartNewGame(PlayerIndex playerIndex)
+        public void SetNewGame(PlayerIndex playerIndex)
         {
             GameManager.instance.SetGameState(GameState.RUN);
             GameManager.instance.StartNewTurn(playerIndex);
@@ -49,11 +50,16 @@ namespace LastOneOut
         public void OnGameStateChangeHandler(object stateInfo = null)
         {
             SetGameMenu(false);
-            loadingCanvas.SetActive(GameManager.instance.gameState == GameState.LOADING);
-            homeCanvas.SetActive(GameManager.instance.gameState == GameState.MENU);
-            setupCanvas.SetActive(GameManager.instance.gameState == GameState.SETUP);
-            gameCanvas.SetActive(GameManager.instance.gameState == GameState.RUN);
-            endCanvas.SetActive(GameManager.instance.gameState == GameState.END);
+            if(loadingCanvas != null)
+                loadingCanvas.SetActive(GameManager.instance.gameState == GameState.LOADING);
+            if (homeCanvas != null)
+                homeCanvas.SetActive(GameManager.instance.gameState == GameState.MENU);
+            if (setupCanvas != null)
+                setupCanvas.SetActive(GameManager.instance.gameState == GameState.SETUP);
+            if (gameCanvas != null)
+                gameCanvas.SetActive(GameManager.instance.gameState == GameState.RUN);
+            if (endCanvas != null)
+                endCanvas.SetActive(GameManager.instance.gameState == GameState.END);
 
             switch (GameManager.instance.gameState)
             {
@@ -83,7 +89,7 @@ namespace LastOneOut
         {
         }
 
-        private void OnGameTurnChangeHandler()
+        public void OnGameTurnChangeHandler()
         {
         }
 
@@ -111,27 +117,27 @@ namespace LastOneOut
 
         public void OnButtonHumanVSHuman()
         {
-            SetNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.HUMAN));
+            StartNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.HUMAN));
         }
 
         public void OnButtonHumanVSNimatron()
         {
-            SetNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.NIMATRON));
+            StartNewGame(new GameInfo(PlayerType.HUMAN, PlayerType.NIMATRON));
         }
 
         public void OnButtonNimatronVSNimatron()
         {
-            SetNewGame(new GameInfo(PlayerType.NIMATRON, PlayerType.NIMATRON));
+            StartNewGame(new GameInfo(PlayerType.NIMATRON, PlayerType.NIMATRON));
         }
 
         public void OnButtonPlayerOneStarts()
         {
-            StartNewGame(PlayerIndex.PLAYER_ONE);
+            SetNewGame(PlayerIndex.PLAYER_ONE);
         }
 
         public void OnButtonPlayerTwoStarts()
         {
-            StartNewGame(PlayerIndex.PLAYER_TWO);
+            SetNewGame(PlayerIndex.PLAYER_TWO);
         }
 
         public void OnButtonEndTurn()

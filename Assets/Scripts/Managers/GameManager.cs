@@ -129,13 +129,16 @@ namespace LastOneOut
 
         public void SelectBoardItem(BoardItem selectedItem)
         {
-            if (CheckPlayerMaxMoves() == true)
+            if (currentGameData == null)
+                return;
+
+            if (CheckPlayerMaxMoves(currentGameData.currentPlayerMoves) == true)
                 return;
 
             currentGameData.currentPlayerMoves++;
 
             if (currentGameData.currentPlayer.GetType().Equals(typeof(PlayerHuman))
-                && CheckPlayerFirstMove() == true
+                && CheckPlayerMinMoves(currentGameData.currentPlayerMoves) == true
                 && onTurnEnabledChange != null)
                 onTurnEnabledChange(true);
 
@@ -145,14 +148,17 @@ namespace LastOneOut
             CheckGameEnd();
         }
 
-        public bool CheckPlayerMaxMoves()
+        public bool CheckPlayerMaxMoves(int currentMoves)
         {
-            return currentGameData.currentPlayerMoves >= maxTurnMoves;
+            if (currentGameData == null)
+                return false;
+
+            return currentMoves >= maxTurnMoves;
         }
 
-        public bool CheckPlayerFirstMove()
+        public bool CheckPlayerMinMoves(int currentMoves)
         {
-            return currentGameData.currentPlayerMoves == minTurnMoves;
+            return currentMoves == minTurnMoves;
         }
 
         public void CheckGameEnd()

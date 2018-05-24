@@ -96,7 +96,7 @@ namespace LastOneOut
             }
         }
 
-        private void OnGameItemSelectedHandler(BoardItem item)
+        public void OnGameItemSelectedHandler(BoardItem item)
         {
             DestroyItem(item);
         }
@@ -113,6 +113,9 @@ namespace LastOneOut
 
         public void StoreBoardPositions()
         {
+            if (board == null)
+                return;
+
             initialBoardPlaces = new List<Vector3>();
             Transform[] places = board.GetComponentsInChildren<Transform>();
             foreach (Transform transform in places)
@@ -150,6 +153,9 @@ namespace LastOneOut
 
         public void DestroyItem(BoardItem item)
         {
+            if (GameManager.instance.currentGameData == null)
+                return;
+
             if (GameManager.instance.currentGameData.boardItems != null)
                 GameManager.instance.currentGameData.boardItems.Remove(item.id);
 
