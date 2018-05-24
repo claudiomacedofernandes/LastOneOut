@@ -37,6 +37,8 @@ namespace LastOneOut
                 case GameState.NONE:
                 case GameState.MENU:
                 case GameState.EXIT:
+                    OnGameClosed();
+                    break;
                 case GameState.END:
                     OnGameEnd();
                     break;
@@ -46,7 +48,22 @@ namespace LastOneOut
                 case GameState.SETUP:
                     ShowBoard();
                     break;
+                case GameState.RUN:
+                    OnGameRun();
+                    break;
+                case GameState.PAUSE:
+                    OnGamePause();
+                    break;
             }
+        }
+
+        public void OnGameClosed()
+        {
+            if (GameManager.instance.currentGameData == null)
+                return;
+
+            DestroyBoard();
+            HideBoard();
         }
 
         public void OnGameStart()
@@ -57,11 +74,24 @@ namespace LastOneOut
 
         public void OnGameEnd()
         {
-            if (GameManager.instance.currentGameData == null)
-                return;
+        }
 
-            DestroyBoard();
-            HideBoard();
+        public void OnGameRun()
+        {
+            BoardItem[] items = board.GetComponentsInChildren<BoardItem>();
+            foreach (BoardItem item in items)
+            {
+                item.Init();
+            }
+        }
+
+        public void OnGamePause()
+        {
+            BoardItem[] items = board.GetComponentsInChildren<BoardItem>();
+            foreach (BoardItem item in items)
+            {
+                item.Pause();
+            }
         }
 
         private void OnGameItemSelectedHandler(BoardItem item)
@@ -111,7 +141,7 @@ namespace LastOneOut
         public void AddItem(Vector3 position)
         {
             BoardItem item = CreateItem(position);
-            string itemId = item.Init();
+            string itemId = item.Setup();
             if (GameManager.instance.currentGameData.boardItems != null)
                 GameManager.instance.currentGameData.boardItems.Add(itemId, item);
         }
@@ -120,7 +150,11 @@ namespace LastOneOut
         {
             if (GameManager.instance.currentGameData.boardItems != null)
                 GameManager.instance.currentGameData.boardItems.Remove(item.id);
-            Destroy(item.gameObject);
+
+            if(GameManager.instance.currentGameData.boardItems.Count > 0)
+                item.SetVictoryState();
+            else
+                item.SetDefeateState();
         }
 
         public void DestroyBoard()
