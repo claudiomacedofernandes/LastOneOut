@@ -43,7 +43,7 @@ namespace LastOneOut
 
             if (GameManager.instance.currentGameData.boardItems.Count > (multiplier + 1))
             {
-                division = Mathf.FloorToInt((GameManager.instance.currentGameData.boardItems.Count - 1) / multiplier);
+                division = Mathf.FloorToInt((GameManager.instance.currentGameData.boardItems.Count - GameManager.instance.minTurnMoves) / multiplier);
                 optimal = (division * multiplier) + 1;
             }
 
